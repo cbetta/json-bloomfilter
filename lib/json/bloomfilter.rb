@@ -1,4 +1,4 @@
-require "bitarray"
+require_relative "bitarray"
 require "json"
 
 class JsonBloomfilter
@@ -9,11 +9,10 @@ class JsonBloomfilter
     @bits = BitArray.new(@options[:size], @options[:bits])
   end
 
-  def insert key
+  def add key
     indexes_for(key).each { |index| @bits[index] = 1 }
     nil
   end
-  alias :add :insert
 
   def test key
     indexes = indexes_for(key)
@@ -23,10 +22,6 @@ class JsonBloomfilter
     end
     true
   end
-  alias :[] :test
-  alias :include? :test
-  alias :key? :test
-  alias :has? :test
 
   def clear
     @bits = BitArray.new(@options[:size], 0)

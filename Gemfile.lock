@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/cbetta/bitarray.git
+  revision: 20a17ad4afc884a7062245d3176ca32c55862f75
+  branch: expose_field
+  specs:
+    bitarray (0.0.1)
+
 PATH
   remote: .
   specs:
@@ -21,6 +28,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bitarray!
   json-bloomfilter!
   rake
   rspec

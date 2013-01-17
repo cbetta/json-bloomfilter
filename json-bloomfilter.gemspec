@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "json-bloomfilter/version"
+require "json/bloomfilter/version"
 
 Gem::Specification.new do |s|
   s.name        = "json-bloomfilter"

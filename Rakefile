@@ -54,7 +54,7 @@ namespace :js do
       coffee_script += File.read(filename) + "\n"
     end
 
-    js_file = "js/bloomfilter.js"
+    js_file = "js/json-bloomfilter.js"
     directory_name = File.dirname js_file
     FileUtils.mkdir_p(directory_name) unless File.exists? directory_name
     puts "\t\t->#{js_file}"
@@ -68,8 +68,8 @@ namespace :js do
     filename = args[:filename]
     compressor = YUI::JavaScriptCompressor.new
 
-    js_file = "js/bloomfilter.js"
-    min_file = "js/bloomfilter.min.js"
+    js_file = "js/json-bloomfilter.js"
+    min_file = "js/json-bloomfilter.min.js"
 
     puts "\t\t->#{min_file}"
     directory_name = File.dirname min_file

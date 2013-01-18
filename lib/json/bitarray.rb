@@ -1,3 +1,6 @@
+# Adapted from
+# https://github.com/peterc/bitarray
+
 class BitArray
   attr_reader :size
   attr_reader :field

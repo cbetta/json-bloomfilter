@@ -6,11 +6,17 @@ A BloomFilter implementation that is serialisable to JSON and compatible between
 
 ### Installation
 
-`gem install json-bloomfilter`
+```shell
+gem install json-bloomfilter
+```
 
 or
 
-`gem 'json-bloomfilter'` in your Gemfile
+```ruby
+gem 'json-bloomfilter'
+``` 
+
+in your Gemfile
 
 ### Ruby
 

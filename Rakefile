@@ -1,7 +1,7 @@
 require "bundler/gem_tasks"
 
 desc "Set up and run tests"
-task :default => [:test]
+task :default => [:test, :"jasmine:ci"]
 
 desc "Run tests"
 task :test do

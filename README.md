@@ -110,5 +110,5 @@ Additionally you can pass along:
 
 ## License
 
-See LICENSE
+See [LICENSE](https://github.com/cbetta/json-bloomfilter/blob/master/LICENSE)
 

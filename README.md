@@ -10,11 +10,9 @@ What this Gem allows you to do is build a bloom filter server side, add all your
 
 All of this while not sending the entire list to the client, which is something you might not want to do for either security or efficiency reasons.
 
-## Usage
+## Installation
 
-### Installation
-
-#### Ruby
+### Ruby
 
 ```shell
 gem install json-bloomfilter
@@ -26,11 +24,13 @@ or
 gem 'json-bloomfilter'
 ```
 
-#### Javascript
+in your Gemfile
+
+### Javascript
 
 Download [json-bloomfilter.min.js](https://raw.github.com/cbetta/json-bloomfilter/master/js/json-bloomfilter.min.js) into your project.
 
-in your Gemfile
+## Usage
 
 ### Ruby
 

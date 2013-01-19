@@ -9,6 +9,11 @@ JsonBloomfilter = (options = {}) ->
   @bits = new JsonBloomfilter.BitArray(@options["size"], @options["bits"])
   this
 
+JsonBloomfilter.build = (capacity, error_rate) ->
+  size = Math.ceil(capacity * Math.log(error_rate) / Math.log(1.0 / Math.pow(2,Math.log(2))))
+  hashes = Math.round(Math.log(2) * size / capacity)
+  new JsonBloomfilter({size: size, hashes: hashes})
+
 JsonBloomfilter.prototype.add = (key) ->
   @bits.add(index) for index in @indexesFor(key)
   return

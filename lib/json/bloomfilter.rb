@@ -4,6 +4,12 @@ require "json"
 class JsonBloomfilter
   DEFAULTS = { "size" => 100, "hashes" => 4, "seed" => Time.new.to_i, "bits" => nil }
 
+  def self.build capacity, error_rate
+    size = (capacity * Math.log(error_rate) / Math.log(1.0 / 2**Math.log(2))).ceil
+    hashes = (Math.log(2) * size / capacity).round
+    JsonBloomfilter.new size: size, hashes: hashes
+  end
+
   def initialize options = {}
     @options = merge_defaults_with options
     @bits = BitArray.new(@options["size"], @options["bits"])

@@ -2,6 +2,14 @@ require "spec_helper"
 
 describe JsonBloomfilter do
 
+  describe ".build" do
+    it "should generate a BloomFilter with the right number of hashes and size" do
+      bf = JsonBloomfilter.build 1000, 0.01
+      expect(bf.to_hash["hashes"]).to be == 7
+      expect(bf.to_hash["size"]).to be == 9586
+    end
+  end
+
   describe "#initialize" do
     it "should take the appropriate options" do
       seed = Time.now.to_i - 24*60*60

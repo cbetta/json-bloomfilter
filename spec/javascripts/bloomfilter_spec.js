@@ -1,5 +1,13 @@
 describe("JsonBloomfilter", function() {
 
+  describe(".build", function() {
+    it("should generate a BloomFilter with the right number of hashes and size", function() {
+      bf = JsonBloomfilter.build(1000, 0.01);
+      expect(bf.toHash()["hashes"]).toBe(7);
+      expect(bf.toHash()["size"]).toBe(9586);
+    });
+  });
+
   describe("#initialize", function() {
     it("should take the appropriate options", function() {
       seed = (new Date().getTime()/1000) - 24*60*60;

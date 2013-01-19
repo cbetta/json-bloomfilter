@@ -41,8 +41,13 @@ and the `json-bloomfilter.min.js` will be copied to your local directory. If you
 ### Ruby
 
 ```ruby
-# create a new BloomFilter and add entries
+# use the factory to configure the filter
+filter =  JsonBloomFilter.build 10000, 0.01 # number of expected items, desired error rate
+
+# or create a define the BloomFilter manually
 filter = JsonBloomFilter.new size: 100
+
+# and add entries
 filter.add "foo"
 filter.add "bar"
 filter.test "foo" #=> true
@@ -53,7 +58,7 @@ filter.test "doh" #=> probably false
 filter.to_json #=> hash as JSON
 config = filter.to_hash #=> { "size" => 100, "hashes" => 4, "seed" => 1234567890, "bits" => [...] }
 
-# use the hash to generate a new BloomFilter with the same config
+# use the hash to generate a new filter with the same config
 filter2 = JsonBloomFilter.new config
 filter2.test "foo" #=> true
 filter2.test "bar" #=> true
@@ -63,8 +68,13 @@ filter2.test "doh" #=> probably false
 ### Javascript
 
 ```javascript
-// create a new BloomFilter and add entries
+// use the factory to configure the filter
+filter =  JsonBloomFilter.build(10000, 0.01); // number of expected items, desired error rate
+
+// or create a define the filter manually
 filter = new JsonBloomFilter({ size: 100 });
+
+// and add entries
 filter.add("foo");
 filter.add("bar");
 filter.test("foo"); //=> true
@@ -102,6 +112,7 @@ Additionally you can pass along:
 
 ## Release notes
 
+* **0.0.6** Adds a factory that takes a size + error rate
 * **0.0.5** Adds installer of JS file
 * **0.0.4** Adds JS tests
 * **0.0.3** Adds Ruby tests

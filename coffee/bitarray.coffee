@@ -6,7 +6,7 @@ JsonBloomfilter.BitArray = (size, field = null) ->
   @field = field || []
 
   arrayLength = Math.floor(((size - 1) / @ELEMENT_WIDTH) + 1)
-  @field[i] = 0 for i in [0..arrayLength] unless field
+  @field[i] = 0 for i in [0..arrayLength-1] unless field
 
   this
 

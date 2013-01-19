@@ -19,7 +19,7 @@ JsonBloomfilter.prototype.test = (key) ->
   true
 
 JsonBloomfilter.prototype.clear = ->
-  @bits = @BitArray.new(@options["size"], null)
+  @bits = new JsonBloomfilter.BitArray(@options["size"])
   return
 
 JsonBloomfilter.prototype.toHash = ->

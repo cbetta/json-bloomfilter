@@ -14,7 +14,7 @@ or
 
 ```ruby
 gem 'json-bloomfilter'
-``` 
+```
 
 in your Gemfile
 
@@ -30,24 +30,49 @@ filter.test "bar" #=> true
 filter.test "doh" #=> probably false
 
 # export the filter to a hash or json
+filter.to_json #=> hash as JSON
 config = filter.to_hash #=> { "size" => 100, "hashes" => 4, "seed" => 1234567890, "bits" => [...] }
 
 # use the hash to generate a new BloomFilter with the same config
-filter2 = BloomFilter.new config
+filter2 = JsonBloomFilter.new config
 filter2.test "foo" #=> true
 filter2.test "bar" #=> true
 filter2.test "doh" #=> probably false
 ```
 
+### Javascript
+
+```javascript
+# create a new BloomFilter and add entries
+filter = new JsonBloomFilter({ size: 100 });
+filter.add("foo");
+filter.add("bar");
+filter.test("foo"); #=> true
+filter.test("bar"); #=> true
+filter.test("doh"); #=> probably false
+
+# export the filter to a hash or json
+filter.toJson();  #=> hash as JSON
+config = filter.toHash(); #=> { "size" => 100, "hashes" => 4, "seed" => 1234567890, "bits" => [...] }
+
+# use the hash to generate a new BloomFilter with the same config
+filter2 = new JsonBloomFilter(config);
+filter2.test("foo"); #=> true
+filter2.test("bar"); #=> true
+filter2.test("doh") #=> probably false
+```
+
+### Options
+
 Valid options for constructor are:
 
-* `size` the number of items intended to store in the
-* `hashes` the number of hashes used to calculate the bit positions in the bit field
-* `seed` the seed for the hashing method
+* `size` (default: 100), the number of items intended to store in the
+* `hashes` (default: 4), the number of hashes used to calculate the bit positions in the bit field
+* `seed` (default: current UNIX time), the seed for the hashing method
 
 Additionally you can pass along:
 
-* `bits` an array with the bitfield in non-bit format. Use `#to_hash` to create these for your active BloomFilter.
+* `bits` (default: null), an array with the bitfield in non-bit format. Use `#to_hash` to create these for your active BloomFilter.
 
 ## Credits
 

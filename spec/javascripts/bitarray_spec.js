@@ -6,9 +6,14 @@ describe("JsonBloomfilter.BitArray", function() {
     });
 
     it("should take an optional bit field", function() {
-      ba = new JsonBloomfilter.BitArray(10);
-      ba.add(9);
-      expect(function(){ba.add(10);}).toThrow("BitArray index out of bounds");
+      field = [0,0,0,2];
+      ba = new JsonBloomfilter.BitArray(100, field);
+      expect(ba.field).toBe(field);
+    });
+
+    it("should create the right size field"), function() {
+      ba = new JsonBloomfilter.BitArray(100);
+      expect(ba.field.length).toBe(4);
     });
   });
 

@@ -8,6 +8,13 @@ task :test do
   sh "bundle exec rspec spec"
 end
 
+task :travis do
+  ["rake test", "rake jasmine:ci"].each do |cmd|
+    puts "Starting to run #{cmd}..."
+    system("export DISPLAY=:99.0 && bundle exec #{cmd}")
+    raise "#{cmd} failed!" unless $?.exitstatus == 0
+  end
+end
 
 desc "Autobuild JS/SCSS"
 task :watch do

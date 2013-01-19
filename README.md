@@ -14,6 +14,8 @@ All of this while not sending the entire list to the client, which is something 
 
 ### Installation
 
+#### Ruby
+
 ```shell
 gem install json-bloomfilter
 ```
@@ -23,6 +25,10 @@ or
 ```ruby
 gem 'json-bloomfilter'
 ```
+
+#### Javascript
+
+Download [json-bloomfilter.min.js](https://raw.github.com/cbetta/json-bloomfilter/master/js/json-bloomfilter.min.js) into your project.
 
 in your Gemfile
 

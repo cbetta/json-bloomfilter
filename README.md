@@ -43,23 +43,23 @@ filter2.test "doh" #=> probably false
 ### Javascript
 
 ```javascript
-# create a new BloomFilter and add entries
+// create a new BloomFilter and add entries
 filter = new JsonBloomFilter({ size: 100 });
 filter.add("foo");
 filter.add("bar");
-filter.test("foo"); #=> true
-filter.test("bar"); #=> true
-filter.test("doh"); #=> probably false
+filter.test("foo"); //=> true
+filter.test("bar"); //=> true
+filter.test("doh"); //=> probably false
 
-# export the filter to a hash or json
-filter.toJson();  #=> hash as JSON
-config = filter.toHash(); #=> { "size" => 100, "hashes" => 4, "seed" => 1234567890, "bits" => [...] }
+// export the filter to a hash or json
+filter.toJson();  //=> hash as JSON
+config = filter.toHash(); //=> { "size" => 100, "hashes" => 4, "seed" => 1234567890, "bits" => [...] }
 
-# use the hash to generate a new BloomFilter with the same config
+// use the hash to generate a new BloomFilter with the same config
 filter2 = new JsonBloomFilter(config);
-filter2.test("foo"); #=> true
-filter2.test("bar"); #=> true
-filter2.test("doh") #=> probably false
+filter2.test("foo"); //=> true
+filter2.test("bar"); //=> true
+filter2.test("doh") //=> probably false
 ```
 
 ### Options

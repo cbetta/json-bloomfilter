@@ -114,6 +114,7 @@ Additionally you can pass along:
 
 ## Release notes
 
+* **0.1.0** Added travis. Bumped minor release version
 * **0.0.6** Adds a factory that takes a size + error rate
 * **0.0.5** Adds installer of JS file
 * **0.0.4** Adds JS tests

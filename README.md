@@ -1,6 +1,6 @@
 # Serialisable (JSON) Bloom Filter
 
-[![Build Status](https://travis-ci.org/cbetta/json-bloomfilter.png?branch=master)](https://travis-ci.org/cbetta/json-bloomfilter)
+[![Build Status](https://travis-ci.org/cbetta/json-bloomfilter.png?branch=master)](https://travis-ci.org/cbetta/json-bloomfilter) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/cbetta/json-bloomfilter)
 
 A bloom filter implementation that is serialisable to JSON and compatible between both Ruby and Javascript. Very useful when needing to train a bloom filter in one language and using it in the other.
 

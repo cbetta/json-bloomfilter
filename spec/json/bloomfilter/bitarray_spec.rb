@@ -4,8 +4,8 @@ describe JsonBloomfilter::BitArray do
 
   describe "#initialize" do
     it "should require a size" do
-      expect(->{JsonBloomfilter::BitArray.new}).to raise_error(ArgumentError)
-      expect(->{JsonBloomfilter::BitArray.new(100)}).not_to raise_error(ArgumentError)
+      expect(lambda{JsonBloomfilter::BitArray.new}).to raise_error(ArgumentError)
+      expect(lambda{JsonBloomfilter::BitArray.new(100)}).not_to raise_error(ArgumentError)
     end
     it "should take an optional bit field" do
       field = [0,0,0,2]
@@ -23,7 +23,7 @@ describe JsonBloomfilter::BitArray do
 
     it "should throw an error on out of bound" do
       ba = JsonBloomfilter::BitArray.new(10)
-      expect(->{ba.add(10)}).to raise_error
+      expect(lambda{ba.add(10)}).to raise_error
     end
   end
 
@@ -37,7 +37,7 @@ describe JsonBloomfilter::BitArray do
 
     it "should throw an error on out of bound" do
       ba = JsonBloomfilter::BitArray.new(10)
-      expect(->{ba.remove(10)}).to raise_error
+      expect(lambda{ba.remove(10)}).to raise_error
     end
   end
 
@@ -51,7 +51,7 @@ describe JsonBloomfilter::BitArray do
 
     it "should throw an error on out of bound" do
       ba = JsonBloomfilter::BitArray.new(10)
-      expect(->{ba.get(10)}).to raise_error
+      expect(lambda{ba.get(10)}).to raise_error
     end
   end
 

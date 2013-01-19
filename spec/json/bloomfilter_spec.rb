@@ -13,7 +13,7 @@ describe JsonBloomfilter do
   describe "#initialize" do
     it "should take the appropriate options" do
       seed = Time.now.to_i - 24*60*60
-      bf = JsonBloomfilter.new size: 200, hashes: 10, seed: seed
+      bf = JsonBloomfilter.new :size => 200, :hashes => 10, :seed => seed
       expect(bf.to_hash["size"]).to be == 200
       expect(bf.to_hash["hashes"]).to be == 10
       expect(bf.to_hash["seed"]).to be == seed

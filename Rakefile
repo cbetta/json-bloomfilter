@@ -24,12 +24,12 @@ task :watch do
   monitor = FSSM::Monitor.new
 
   monitor.path "coffee", "**/*.coffee" do
-    compile_block = -> basename, filename do
+    compile_block = lambda do |basename, filename|
       puts "Compiling coffee to minified js..."
       coffee_file = "coffee/#{filename}"
       puts "\t#{coffee_file}"
-      Rake::Task["js:compile_file"].tap(&:reenable).invoke(coffee_file)
-      Rake::Task["js:minify_file"].tap(&:reenable).invoke(coffee_file)
+      Rake::Task["js:compile_cs"].tap(&:reenable).invoke
+      Rake::Task["js:minify_js"].tap(&:reenable).invoke
     end
 
     update &compile_block

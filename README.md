@@ -96,7 +96,7 @@ filter2.test("doh") //=> probably false
 
 Valid options for constructor are:
 
-* `size` (default: 100), the number of items intended to store in the
+* `size` (default: 100), the bit size of the bit array used
 * `hashes` (default: 4), the number of hashes used to calculate the bit positions in the bit field
 * `seed` (default: current UNIX time), the seed for the hashing method
 

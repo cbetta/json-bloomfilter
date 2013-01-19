@@ -7,7 +7,7 @@ class JsonBloomfilter
   def self.build capacity, error_rate
     size = (capacity * Math.log(error_rate) / Math.log(1.0 / 2**Math.log(2))).ceil
     hashes = (Math.log(2) * size / capacity).round
-    JsonBloomfilter.new size: size, hashes: hashes
+    JsonBloomfilter.new :size => size, :hashes => hashes
   end
 
   def initialize options = {}

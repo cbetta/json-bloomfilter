@@ -43,8 +43,15 @@ Additionally you can pass along:
 
 * `bits` an array with the bitfield in non-bit format. Use `#to_hash` to create these for your active BloomFilter.
 
+## Credits
+
+* bitarray.rb and bitarray.coffee based on [version by Peter Cooper](https://github.com/peterc/bitarray).
+* bloomfilter.rb and bloomfilter.coffee inspired by [Ilya Grigorik's Redis Bloomfilter](https://github.com/igrigorik/bloomfilter-rb/blob/master/lib/bloomfilter/redis.rb)
+* zlib.coffee crc32 method based on the [node-crc32](https://github.com/mikepulaski/node-crc32) library and [this snippet](http://stackoverflow.com/questions/6226189/how-to-convert-a-string-to-bytearray/10132540#10132540)
+
 ## Release notes
 
+* **0.0.4** Added JS tests
 * **0.0.3** Added Ruby tests
 * **0.0.2** First implementation of both Ruby and JS filters
 * **0.0.1** Skeleton

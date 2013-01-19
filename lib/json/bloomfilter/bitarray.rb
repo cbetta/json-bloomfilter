@@ -1,6 +1,3 @@
-# Adapted from
-# https://github.com/peterc/bitarray
-
 class JsonBloomfilter
   class BitArray
     attr_reader :size

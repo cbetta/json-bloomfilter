@@ -1,0 +1,8 @@
+src_files:
+    - js/json-bloomfilter.min.js
+
+helpers:
+  - 'helpers/**/*.js'
+
+spec_files:
+  - '**/*spec.js'

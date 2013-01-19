@@ -14,7 +14,7 @@ describe JsonBloomfilter::BitArray do
     end
   end
 
-  describe "add" do
+  describe "#add" do
     it "should set the bit to 1" do
       ba = JsonBloomfilter::BitArray.new(10)
       ba.add(9)
@@ -27,7 +27,7 @@ describe JsonBloomfilter::BitArray do
     end
   end
 
-  describe "remove" do
+  describe "#remove" do
     it "should set the bit to 0" do
       ba = JsonBloomfilter::BitArray.new(10)
       ba.add(9)
@@ -41,7 +41,7 @@ describe JsonBloomfilter::BitArray do
     end
   end
 
-  describe "get" do
+  describe "#get" do
     it "should return the bit set" do
       ba = JsonBloomfilter::BitArray.new(10)
       ba.add(9)

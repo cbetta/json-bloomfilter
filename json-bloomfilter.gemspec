@@ -23,4 +23,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'coffee-script'
   s.add_development_dependency 'fssm'
   s.add_development_dependency 'rb-fsevent'
+  s.add_development_dependency 'jasmine'
 end

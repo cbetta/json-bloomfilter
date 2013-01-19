@@ -1,3 +1,3 @@
 class JsonBloomfilter
-  VERSION = "0.0.3" unless defined? Trifle::VERSION
+  VERSION = "0.0.4" unless defined? Trifle::VERSION
 end

@@ -1,4 +1,6 @@
 JsonBloomfilter.BitArray = (size, field = null) ->
+  throw new Error("Missing argument: size") unless size
+
   @ELEMENT_WIDTH = 32
   @size = size
   @field = field || []
@@ -15,15 +17,17 @@ JsonBloomfilter.BitArray.prototype.remove = (position) ->
   @set(position, 0)
 
 JsonBloomfilter.BitArray.prototype.set = (position, value) ->
+  throw new Error("BitArray index out of bounds") if position >= @size
   aPos = @arrayPosition(position)
   bChange = @bitChange(position)
   if value == 1
     @field[aPos] |= bChange
-  else if @field[aPos] & bChange != 0
+  else if (@field[aPos] & bChange) != 0
     @field[aPos] ^= bChange
   true
 
 JsonBloomfilter.BitArray.prototype.get = (position) ->
+  throw new Error("BitArray index out of bounds") if position >= @size
   aPos = @arrayPosition(position)
   bChange = @bitChange(position)
   if (@field[aPos] & bChange) > 0

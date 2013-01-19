@@ -1,4 +1,4 @@
-require_relative "bloomfilter/bitarray"
+require "json/bloomfilter/bitarray"
 require "json"
 
 class JsonBloomfilter

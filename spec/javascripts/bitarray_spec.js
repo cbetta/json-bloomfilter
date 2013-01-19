@@ -11,7 +11,7 @@ describe("JsonBloomfilter.BitArray", function() {
       expect(ba.field).toBe(field);
     });
 
-    it("should create the right size field"), function() {
+    it("should create the right size field", function() {
       ba = new JsonBloomfilter.BitArray(100);
       expect(ba.field.length).toBe(4);
     });

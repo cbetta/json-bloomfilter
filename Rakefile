@@ -66,7 +66,7 @@ namespace :js do
     FileUtils.mkdir_p(directory_name) unless File.exists? directory_name
     puts "\t\t->#{js_file}"
     File.open(js_file, "w+") do |f|
-      f.print CoffeeScript.compile(coffee_script, no_wrap: true)
+      f.print CoffeeScript.compile(coffee_script, :no_wrap => true)
     end
   end
 

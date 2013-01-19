@@ -1,3 +1,3 @@
 class JsonBloomfilter
-  VERSION = "0.1.0" unless defined? JsonBloomfilter::VERSION
+  VERSION = "0.1.1" unless defined? JsonBloomfilter::VERSION
 end

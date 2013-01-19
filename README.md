@@ -76,9 +76,9 @@ Additionally you can pass along:
 
 ## Credits
 
-* bitarray.rb and bitarray.coffee based on [version by Peter Cooper](https://github.com/peterc/bitarray).
-* bloomfilter.rb and bloomfilter.coffee inspired by [Ilya Grigorik's Redis Bloomfilter](https://github.com/igrigorik/bloomfilter-rb/blob/master/lib/bloomfilter/redis.rb)
-* zlib.coffee crc32 method based on the [node-crc32](https://github.com/mikepulaski/node-crc32) library and [this snippet](http://stackoverflow.com/questions/6226189/how-to-convert-a-string-to-bytearray/10132540#10132540)
+* [bitarray.rb](https://github.com/cbetta/json-bloomfilter/blob/master/lib/json/bloomfilter/bitarray.rb) and [bitarray.coffee](https://github.com/cbetta/json-bloomfilter/blob/master/coffee/bitarray.coffee) based on [version by Peter Cooper](https://github.com/peterc/bitarray).
+* [bloomfilter.rb](https://github.com/cbetta/json-bloomfilter/blob/master/lib/json/bloomfilter.rb) and [bloomfilter.coffee](https://github.com/cbetta/json-bloomfilter/blob/master/coffee/bloomfilter.coffee) inspired by [Ilya Grigorik's Redis Bloomfilter](https://github.com/igrigorik/bloomfilter-rb/blob/master/lib/bloomfilter/redis.rb)
+* [zlib.coffee](https://github.com/cbetta/json-bloomfilter/blob/master/coffee/zlib.coffee) crc32 method based on the [node-crc32](https://github.com/mikepulaski/node-crc32) library and [this snippet](http://stackoverflow.com/questions/6226189/how-to-convert-a-string-to-bytearray/10132540#10132540)
 
 ## Release notes
 

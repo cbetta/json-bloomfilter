@@ -4,7 +4,7 @@ A bloom filter implementation that is serialisable to JSON and compatible betwee
 
 ## Why?
 
-Bloom filters allow for space efficient lookups in a list, without having to store all the items in the list. This is useful for looking up tags, domain names, links, or anything else that you might want to do client side. 
+Bloom filters allow for space efficient lookups in a list, without having to store all the items in the list. This is useful for looking up tags, domain names, links, or anything else that you might want to do client side.
 
 What this Gem allows you to do is build a bloom filter server side, add all your entries to it, and then serialise the filter to JSON. On the client side you can then load up the serialised data into the Javascript version and use the bloom filter as is.
 
@@ -28,7 +28,13 @@ in your Gemfile
 
 ### Javascript
 
-Download [json-bloomfilter.min.js](https://raw.github.com/cbetta/json-bloomfilter/master/js/json-bloomfilter.min.js) into your project.
+With the gem installed run
+
+```
+json-bloomfilter install
+```
+
+and the `json-bloomfilter.min.js` will be copied to your local directory. If you are in a Rail project it will be copied to your `app/assets/javascripts` folder.
 
 ## Usage
 
@@ -96,10 +102,11 @@ Additionally you can pass along:
 
 ## Release notes
 
-* **0.0.4** Added JS tests
-* **0.0.3** Added Ruby tests
-* **0.0.2** First implementation of both Ruby and JS filters
-* **0.0.1** Skeleton
+* **0.0.5** Adds installer of JS file
+* **0.0.4** Adds JS tests
+* **0.0.3** Adds Ruby tests
+* **0.0.2** Adds implementation of Ruby and JS filters
+* **0.0.1** Gem skeleton
 
 ## License
 

@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+
+def install
+  current_dir = File.expand_path(File.dirname(__FILE__))
+  filename = "json-bloomfilter.min.js"
+  source = "#{current_dir}/../js/#{filename}"
+  target_dir = Dir.pwd
+  rails_gems = `bundle list | grep rail`
+  js_dir = "#{target_dir}/app/assets/javascripts"
+
+  if !rails_gems.empty? && File.directory?(js_dir)
+    target = "#{js_dir}/#{filename}"
+  else
+    target = "#{target_dir}/#{filename}"
+  end
+
+  puts "Copying #{filename} to #{target}"
+  `cp #{source} #{target}`
+  puts "\t...done"
+end
+
+case ARGV.first
+when "install"
+  install
+else
+  puts "No command found"
+  puts "Usage: json-bloomfilter [command]"
+  puts "Command:"
+  puts "\tinstall: installs the json-bloomfilter.min.js into your current folder"
+end

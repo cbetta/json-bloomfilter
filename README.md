@@ -4,11 +4,11 @@ A bloom filter implementation that is serialisable to JSON and compatible betwee
 
 ## Why?
 
-Bloom filters allow for space efficient lookups in a list, without having to store all the items in the list. This is useful for looking up tags, domain names, links, or anything else.
+Bloom filters allow for space efficient lookups in a list, without having to store all the items in the list. This is useful for looking up tags, domain names, links, or anything else that you might want to do client side. 
 
 What this Gem allows you to do is build a bloom filter server side, add all your entries to it, and then serialise the filter to JSON. On the client side you can then load up the serialised data into the Javascript version and use the bloom filter as is.
 
-All of this while not sending the entire list to the client.
+All of this while not sending the entire list to the client, which is something you might not want to do for either security or efficiency reasons.
 
 ## Usage
 

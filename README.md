@@ -125,7 +125,7 @@ Additionally you can pass along:
 
 ### Probably will work:
 
-* JDK
+* jRuby
 
 ## Release notes
 

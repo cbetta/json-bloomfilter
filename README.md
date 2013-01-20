@@ -36,7 +36,7 @@ With the gem installed run
 json-bloomfilter install
 ```
 
-and the `json-bloomfilter.min.js` will be copied to your local directory. If you are in a Rail project it will be copied to your `app/assets/javascripts` folder.
+and the `json-bloomfilter.min.js` will be copied to your local directory. If you are in a Rails project it will be copied to your `app/assets/javascripts` folder.
 
 ## Usage
 

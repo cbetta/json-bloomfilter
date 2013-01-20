@@ -112,6 +112,21 @@ Additionally you can pass along:
 * [bloomfilter.rb](https://github.com/cbetta/json-bloomfilter/blob/master/lib/json/bloomfilter.rb) and [bloomfilter.coffee](https://github.com/cbetta/json-bloomfilter/blob/master/coffee/bloomfilter.coffee) inspired by [Ilya Grigorik's Redis Bloomfilter](https://github.com/igrigorik/bloomfilter-rb/blob/master/lib/bloomfilter/redis.rb)
 * [zlib.coffee](https://github.com/cbetta/json-bloomfilter/blob/master/coffee/zlib.coffee) crc32 method based on the [node-crc32](https://github.com/mikepulaski/node-crc32) library and [this snippet](http://stackoverflow.com/questions/6226189/how-to-convert-a-string-to-bytearray/10132540#10132540)
 
+## Compatibilities
+
+### Confirmed:
+
+* Ruby 1.8.7
+* Ruby 1.8.2
+* Ruby 1.9.3
+* Rubinius (1.8 mode)
+* Rubinius (1.9 mode)
+* REE
+
+### Probably will work:
+
+* JDK
+
 ## Release notes
 
 * **0.1.1** Fixes a JS integer overflow issue and makes Ruby 1.8.7 compatible

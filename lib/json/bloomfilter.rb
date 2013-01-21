@@ -1,5 +1,6 @@
 require "json/bloomfilter/bitarray"
 require "json"
+require "zlib"
 
 class JsonBloomfilter
   DEFAULTS = { "size" => 100, "hashes" => 4, "seed" => Time.new.to_i, "bits" => nil }

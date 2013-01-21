@@ -18,6 +18,9 @@ All of this while not sending the entire list to the client, which is something 
 
 ```shell
 gem install json-bloomfilter
+
+# and optionally add
+require "json/bloomfilter"
 ```
 
 or
@@ -129,6 +132,7 @@ Additionally you can pass along:
 
 ## Release notes
 
+* **0.1.2** Added Zlib dependency
 * **0.1.1** Fixes a JS integer overflow issue and makes Ruby 1.8.7 compatible
 * **0.1.0** Adds travis-ci. Bumped minor release version
 * **0.0.6** Adds a factory that takes a size + error rate

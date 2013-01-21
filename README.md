@@ -132,6 +132,7 @@ Additionally you can pass along:
 
 ## Release notes
 
+* **0.1.3** Added a check for non positive capacity values on build
 * **0.1.2** Added Zlib dependency
 * **0.1.1** Fixes a JS integer overflow issue and makes Ruby 1.8.7 compatible
 * **0.1.0** Adds travis-ci. Bumped minor release version

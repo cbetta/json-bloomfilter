@@ -6,6 +6,7 @@ class JsonBloomfilter
   DEFAULTS = { "size" => 100, "hashes" => 4, "seed" => Time.new.to_i, "bits" => nil }
 
   def self.build capacity, error_rate
+    raise ArgumentError.new("Capacity needs to be a positive integer") if capacity <= 0
     size = (capacity * Math.log(error_rate) / Math.log(1.0 / 2**Math.log(2))).ceil
     hashes = (Math.log(2) * size / capacity).round
     JsonBloomfilter.new :size => size, :hashes => hashes

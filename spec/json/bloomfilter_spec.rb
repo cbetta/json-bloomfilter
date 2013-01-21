@@ -8,6 +8,10 @@ describe JsonBloomfilter do
       expect(bf.to_hash["hashes"]).to be == 7
       expect(bf.to_hash["size"]).to be == 9586
     end
+
+    it "should require a capacity of > 0" do
+      expect(lambda{JsonBloomfilter.build 0, 0.01}).to raise_error(ArgumentError)
+    end
   end
 
   describe "#initialize" do

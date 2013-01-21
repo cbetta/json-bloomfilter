@@ -6,6 +6,11 @@ describe("JsonBloomfilter", function() {
       expect(bf.toHash()["hashes"]).toBe(7);
       expect(bf.toHash()["size"]).toBe(9586);
     });
+
+    it("should require a positive integer capacity", function() {
+      expect(function(){new JsonBloomfilter.build(0, 0.01)}).toThrow("Capacity needs to be a positive integer")
+    });
+
   });
 
   describe("#initialize", function() {

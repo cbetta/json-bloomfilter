@@ -10,6 +10,8 @@ JsonBloomfilter = (options = {}) ->
   this
 
 JsonBloomfilter.build = (capacity, error_rate) ->
+  throw new Error("Capacity needs to be a positive integer") if capacity <= 0
+
   size = Math.ceil(capacity * Math.log(error_rate) / Math.log(1.0 / Math.pow(2,Math.log(2))))
   hashes = Math.round(Math.log(2) * size / capacity)
   new JsonBloomfilter({size: size, hashes: hashes})

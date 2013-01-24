@@ -35,7 +35,7 @@ and the `json-bloomfilter.min.js` will be copied to your local directory. If you
 ### Ruby
 
 ```ruby
-require "json/bloomfilter"
+require "json-bloomfilter"
 
 # use the factory to configure the filter
 filter =  JsonBloomFilter.build 10000, 0.01 # number of expected items, desired error rate
@@ -129,7 +129,8 @@ Additionally you can pass along:
 
 ## Release notes
 
-* **0.1.4** Changed .build function to take a list of items
+* **0.1.5** Changes namespacing
+* **0.1.4** Changes .build function to take a list of items
 * **0.1.3** Adds a check for non positive capacity values on build
 * **0.1.2** Adds Zlib dependency
 * **0.1.1** Fixes a JS integer overflow issue and makes Ruby 1.8.7 compatible

@@ -1,2 +1,2 @@
-require "json/bloomfilter"
-require "json/bloomfilter/bitarray"
+require "json-bloomfilter"
+require "json-bloomfilter/bitarray"

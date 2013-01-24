@@ -9,6 +9,12 @@ describe JsonBloomfilter do
       expect(bf.to_hash["size"]).to be == 9586
     end
 
+    it "should optionally take an array of strings instead of a capacity" do
+      bf = JsonBloomfilter.build ["foo", "bar"], 0.01
+      expect(bf.to_hash["hashes"]).to be == 7
+      expect(bf.to_hash["size"]).to be == 20
+    end
+
     it "should require a capacity of > 0" do
       expect(lambda{JsonBloomfilter.build 0, 0.01}).to raise_error(ArgumentError)
     end
@@ -42,6 +48,13 @@ describe JsonBloomfilter do
         expect(@bf.test "foo").to be_false
         @bf.add "foo"
         expect(@bf.test "foo").to be_true
+      end
+
+      it "should be able to add and test more than one key at a time" do
+        expect(@bf.test "foo").to be_false
+        expect(@bf.test "bar").to be_false
+        @bf.add ["foo", "bar"]
+        expect(@bf.test ["foo", "bar"]).to be_true
       end
 
       it "should not change anything if added twice" do

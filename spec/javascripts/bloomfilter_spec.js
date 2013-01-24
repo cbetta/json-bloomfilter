@@ -7,6 +7,12 @@ describe("JsonBloomfilter", function() {
       expect(bf.toHash()["size"]).toBe(9586);
     });
 
+    it("should optionally take an array of strings instead of a capacity", function() {
+      bf = JsonBloomfilter.build(["foo", "bar"], 0.01);
+      expect(bf.toHash()["hashes"]).toBe(7);
+      expect(bf.toHash()["size"]).toBe(20);
+    });
+
     it("should require a positive integer capacity", function() {
       expect(function(){new JsonBloomfilter.build(0, 0.01)}).toThrow("Capacity needs to be a positive integer")
     });
@@ -48,6 +54,13 @@ describe("JsonBloomfilter", function() {
         expect(bf.test("foo")).toBe(false);
         bf.add("foo");
         expect(bf.test("foo")).toBe(true);
+      });
+
+      it("should be able to add and test more than one key at a time", function() {
+        expect(bf.test("foo")).toBe(false);
+        expect(bf.test("bar")).toBe(false);
+        bf.add(["foo", "bar"]);
+        expect(bf.test(["foo", "bar"])).toBe(true);
       });
 
       it("should not change anything if added twice", function() {

@@ -16,20 +16,9 @@ All of this while not sending the entire list to the client, which is something 
 
 ### Ruby
 
-```shell
+```
 gem install json-bloomfilter
-
-# and optionally add
-require "json/bloomfilter"
 ```
-
-or
-
-```ruby
-gem 'json-bloomfilter'
-```
-
-in your Gemfile
 
 ### Javascript
 
@@ -46,6 +35,8 @@ and the `json-bloomfilter.min.js` will be copied to your local directory. If you
 ### Ruby
 
 ```ruby
+require "json/bloomfilter"
+
 # use the factory to configure the filter
 filter =  JsonBloomFilter.build 10000, 0.01 # number of expected items, desired error rate
 
@@ -55,6 +46,9 @@ filter = JsonBloomFilter.new size: 100
 # and add entries
 filter.add "foo"
 filter.add "bar"
+# alternatively
+filter.add ["foo", "bar"]
+# test the entries
 filter.test "foo" #=> true
 filter.test "bar" #=> true
 filter.test "doh" #=> probably false
@@ -82,6 +76,9 @@ filter = new JsonBloomFilter({ size: 100 });
 // and add entries
 filter.add("foo");
 filter.add("bar");
+// alternatively
+filter.add(["foo", "bar"]);
+// test the entries
 filter.test("foo"); //=> true
 filter.test("bar"); //=> true
 filter.test("doh"); //=> probably false
@@ -132,8 +129,9 @@ Additionally you can pass along:
 
 ## Release notes
 
-* **0.1.3** Added a check for non positive capacity values on build
-* **0.1.2** Added Zlib dependency
+* **0.1.4** Changed .build function to take a list of items
+* **0.1.3** Adds a check for non positive capacity values on build
+* **0.1.2** Adds Zlib dependency
 * **0.1.1** Fixes a JS integer overflow issue and makes Ruby 1.8.7 compatible
 * **0.1.0** Adds travis-ci. Bumped minor release version
 * **0.0.6** Adds a factory that takes a size + error rate
